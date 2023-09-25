@@ -1,0 +1,71 @@
+[gd_scene load_steps=12 format=3 uid="uid://blmejqe12jfrs"]
+
+[ext_resource type="Script" path="res://script/player.gd" id="1_cjn3o"]
+[ext_resource type="Texture2D" uid="uid://40icw3f1o80b" path="res://spr/pixil-frame-0 (4).png" id="2_gyi0a"]
+[ext_resource type="Texture2D" uid="uid://b4tgtgxtsxj1d" path="res://spr/pixil-frame-0 (8).png" id="3_6i5kq"]
+[ext_resource type="Texture2D" uid="uid://ch1ilbn1tt0e0" path="res://spr/pixil-frame-0 (3).png" id="4_0vj6j"]
+[ext_resource type="Texture2D" uid="uid://duxcqioluovuw" path="res://spr/pixil-frame-0 (7).png" id="5_sxcbw"]
+[ext_resource type="Texture2D" uid="uid://daink1skylx5t" path="res://spr/pixil-frame-0 (1).png" id="6_srb6d"]
+[ext_resource type="Texture2D" uid="uid://blyidcr8yfx44" path="res://spr/pixil-frame-0 (5).png" id="7_4d46l"]
+[ext_resource type="Texture2D" uid="uid://bicwi6kdk2f0n" path="res://spr/pixil-frame-0 (2).png" id="8_xg2lg"]
+[ext_resource type="Texture2D" uid="uid://doyo8v4tqdwaw" path="res://spr/pixil-frame-0 (6).png" id="9_fkq0y"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c24y8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gyi0a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6i5kq")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_0vj6j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_sxcbw")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_srb6d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4d46l")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_xg2lg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_fkq0y")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7vtui"]
+size = Vector2(98, 97)
+
+[node name="player" type="Area2D"]
+script = ExtResource("1_cjn3o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_c24y8")
+animation = &"up"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7vtui")
