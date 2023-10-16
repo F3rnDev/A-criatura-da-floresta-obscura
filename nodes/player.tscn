@@ -65,7 +65,7 @@ script = ExtResource("1_cjn3o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_d53i2")
-animation = &"down"
+animation = &"left"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_k7ipu")

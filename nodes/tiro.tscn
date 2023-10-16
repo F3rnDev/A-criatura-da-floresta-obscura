@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://s38u7pu7dkjo"]
+
+[ext_resource type="Script" path="res://script/tiro.gd" id="1_dyet8"]
+[ext_resource type="Texture2D" uid="uid://c6gquac8rdx8q" path="res://spr/pixil-frame-0 (10).png" id="1_nnwdd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f3pr4"]
+size = Vector2(50, 24)
+
+[node name="tiro" type="Area2D"]
+script = ExtResource("1_dyet8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_f3pr4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_nnwdd")
