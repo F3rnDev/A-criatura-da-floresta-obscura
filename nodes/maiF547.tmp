@@ -1,14 +1,13 @@
 [gd_scene load_steps=6 format=3 uid="uid://dooghbjsep0yn"]
 
+[ext_resource type="Script" path="res://script/main.gd" id="1_7enee"]
 [ext_resource type="PackedScene" uid="uid://nvdnh1a0swh6" path="res://nodes/player.tscn" id="1_wxk61"]
 [ext_resource type="PackedScene" uid="uid://cyuppxpu8yk0s" path="res://nodes/parede.tscn" id="2_6gcq2"]
 [ext_resource type="PackedScene" uid="uid://dijknsmsk3vpi" path="res://nodes/cervo.tscn" id="3_1jmwj"]
 [ext_resource type="PackedScene" uid="uid://bn8s3iyde8xc0" path="res://nodes/controle.tscn" id="4_i4hp3"]
 
-[sub_resource type="GDScript" id="GDScript_a48f4"]
-
 [node name="main" type="Node"]
-script = SubResource("GDScript_a48f4")
+script = ExtResource("1_7enee")
 
 [node name="parede17" parent="." instance=ExtResource("2_6gcq2")]
 position = Vector2(844, 56)

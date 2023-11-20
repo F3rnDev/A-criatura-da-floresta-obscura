@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://dijknsmsk3vpi"]
+
+[ext_resource type="Script" path="res://script/cervo.gd" id="1_uy8mb"]
+[ext_resource type="Texture2D" uid="uid://ko8w074l1u2b" path="res://spr/pixil-frame-0 (11).png" id="1_ynvrl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s23on"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ynvrl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mc1ao"]
+size = Vector2(200, 200)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_uy8mb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_s23on")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mc1ao")

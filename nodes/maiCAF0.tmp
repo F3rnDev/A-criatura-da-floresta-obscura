@@ -6,6 +6,17 @@
 [ext_resource type="PackedScene" uid="uid://bn8s3iyde8xc0" path="res://nodes/controle.tscn" id="4_i4hp3"]
 
 [sub_resource type="GDScript" id="GDScript_a48f4"]
+script/source = "extends Node
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+"
 
 [node name="main" type="Node"]
 script = SubResource("GDScript_a48f4")

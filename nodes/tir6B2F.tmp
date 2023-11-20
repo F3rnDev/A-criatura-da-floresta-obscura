@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c6gquac8rdx8q" path="res://spr/pixil-frame-0 (10).png" id="1_nnwdd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f3pr4"]
-size = Vector2(48, 24)
+size = Vector2(52, 24)
 
 [node name="tiro" type="Area2D"]
 script = ExtResource("1_dyet8")

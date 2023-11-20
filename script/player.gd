@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var bullet_path = preload("res://nodes/tiro.tscn")
 
-const SPEED = 300.0
+var SPEED = 300.0
 
 var canShoot = 100
 
@@ -19,6 +19,9 @@ func shoot(angle):
 		bullet.rotation = deg2rad(angle)
 		canShoot = 0
 	
+
+func _ready():
+	add_to_group("player")
 	
 func _physics_process(delta):
 
@@ -27,6 +30,7 @@ func _physics_process(delta):
 	var dirX = Input.get_axis("move_left", "move_right")
 	var dirY = Input.get_axis("move_down", "move_up")
 	var dirAngle = 0
+	
 	
 	if dirX > 0 and dirY == 0:
 		$AnimatedSprite2D.animation = "right"
@@ -53,6 +57,10 @@ func _physics_process(delta):
 
 	move_and_slide()
 	
+	if Input.is_action_pressed("run"):
+		SPEED = 600
+	else:
+		SPEED = 300 
 	if Input.is_action_just_pressed("shoot"):
 		shoot(dirAngle)
 	
