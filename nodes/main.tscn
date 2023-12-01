@@ -1,86 +1,134 @@
-[gd_scene load_steps=6 format=3 uid="uid://dooghbjsep0yn"]
+[gd_scene load_steps=9 format=3 uid="uid://dooghbjsep0yn"]
 
+[ext_resource type="Texture2D" uid="uid://b2on0gbk5hupn" path="res://spr/scenario/cenario_limpo.png" id="1_qomde"]
 [ext_resource type="PackedScene" uid="uid://nvdnh1a0swh6" path="res://nodes/player.tscn" id="1_wxk61"]
-[ext_resource type="PackedScene" uid="uid://cyuppxpu8yk0s" path="res://nodes/parede.tscn" id="2_6gcq2"]
-[ext_resource type="PackedScene" uid="uid://dijknsmsk3vpi" path="res://nodes/cervo.tscn" id="3_1jmwj"]
+[ext_resource type="PackedScene" uid="uid://dkv04daja0ago" path="res://nodes/tree.tscn" id="4_2eo2a"]
 [ext_resource type="PackedScene" uid="uid://bn8s3iyde8xc0" path="res://nodes/controle.tscn" id="4_i4hp3"]
+[ext_resource type="PackedScene" uid="uid://bqflqlugtg6pu" path="res://nodes/van.tscn" id="5_5yjvo"]
+[ext_resource type="PackedScene" uid="uid://cyuppxpu8yk0s" path="res://nodes/parede.tscn" id="6_bsgu8"]
+[ext_resource type="PackedScene" uid="uid://d6gyaocyrsob" path="res://nodes/limiter.tscn" id="7_3oayn"]
 
-[sub_resource type="GDScript" id="GDScript_a48f4"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_0juag"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qomde")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="main" type="Node"]
-script = SubResource("GDScript_a48f4")
 
-[node name="parede17" parent="." instance=ExtResource("2_6gcq2")]
-position = Vector2(844, 56)
-
-[node name="parede" parent="." instance=ExtResource("2_6gcq2")]
-position = Vector2(250, 598)
-
-[node name="parede2" parent="." instance=ExtResource("2_6gcq2")]
-position = Vector2(350, 598)
-
-[node name="parede3" parent="." instance=ExtResource("2_6gcq2")]
-position = Vector2(450, 598)
-
-[node name="parede4" parent="." instance=ExtResource("2_6gcq2")]
-position = Vector2(548, 598)
-
-[node name="parede5" parent="." instance=ExtResource("2_6gcq2")]
-position = Vector2(648, 598)
-
-[node name="parede6" parent="." instance=ExtResource("2_6gcq2")]
-position = Vector2(748, 598)
-
-[node name="parede7" parent="." instance=ExtResource("2_6gcq2")]
-position = Vector2(844, 598)
-
-[node name="parede8" parent="." instance=ExtResource("2_6gcq2")]
-position = Vector2(942, 598)
-
-[node name="parede9" parent="." instance=ExtResource("2_6gcq2")]
-position = Vector2(50, 433)
-
-[node name="parede10" parent="." instance=ExtResource("2_6gcq2")]
-position = Vector2(50, 333)
-
-[node name="parede11" parent="." instance=ExtResource("2_6gcq2")]
-position = Vector2(50, 248)
-
-[node name="parede12" parent="." instance=ExtResource("2_6gcq2")]
-position = Vector2(250, 56)
-
-[node name="parede13" parent="." instance=ExtResource("2_6gcq2")]
-position = Vector2(1969, 433)
-
-[node name="parede14" parent="." instance=ExtResource("2_6gcq2")]
-position = Vector2(1969, 248)
-
-[node name="parede15" parent="." instance=ExtResource("2_6gcq2")]
-position = Vector2(942, 56)
-
-[node name="parede16" parent="." instance=ExtResource("2_6gcq2")]
-position = Vector2(1969, 333)
-
-[node name="parede18" parent="." instance=ExtResource("2_6gcq2")]
-position = Vector2(748, 56)
-
-[node name="parede19" parent="." instance=ExtResource("2_6gcq2")]
-position = Vector2(648, 56)
-
-[node name="parede20" parent="." instance=ExtResource("2_6gcq2")]
-position = Vector2(548, 56)
-
-[node name="parede21" parent="." instance=ExtResource("2_6gcq2")]
-position = Vector2(450, 56)
-
-[node name="parede22" parent="." instance=ExtResource("2_6gcq2")]
-position = Vector2(350, 56)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(639, 361)
+scale = Vector2(3.00469, 3)
+sprite_frames = SubResource("SpriteFrames_0juag")
 
 [node name="player" parent="." groups=["player"] instance=ExtResource("1_wxk61")]
-position = Vector2(798, 483)
-
-[node name="cervo" parent="." groups=["enemy"] instance=ExtResource("3_1jmwj")]
-position = Vector2(300, 283)
+position = Vector2(749, 461)
 
 [node name="controle" parent="." groups=["controle"] instance=ExtResource("4_i4hp3")]
-position = Vector2(572, 333)
+position = Vector2(639, 361)
+
+[node name="tree" parent="." instance=ExtResource("4_2eo2a")]
+position = Vector2(114, 291)
+
+[node name="tree2" parent="." instance=ExtResource("4_2eo2a")]
+position = Vector2(200, 433)
+
+[node name="tree3" parent="." instance=ExtResource("4_2eo2a")]
+position = Vector2(262, 574)
+
+[node name="tree4" parent="." instance=ExtResource("4_2eo2a")]
+position = Vector2(130, 618)
+
+[node name="tree5" parent="." instance=ExtResource("4_2eo2a")]
+position = Vector2(48, 482)
+
+[node name="tree6" parent="." instance=ExtResource("4_2eo2a")]
+position = Vector2(268, 336)
+
+[node name="tree10" parent="." instance=ExtResource("4_2eo2a")]
+position = Vector2(879, 574)
+
+[node name="tree11" parent="." instance=ExtResource("4_2eo2a")]
+position = Vector2(1012, 598)
+
+[node name="tree12" parent="." instance=ExtResource("4_2eo2a")]
+position = Vector2(1206, 598)
+
+[node name="tree13" parent="." instance=ExtResource("4_2eo2a")]
+position = Vector2(1080, 509)
+
+[node name="tree14" parent="." instance=ExtResource("4_2eo2a")]
+position = Vector2(981, 390)
+
+[node name="tree15" parent="." instance=ExtResource("4_2eo2a")]
+position = Vector2(1150, 393)
+
+[node name="tree16" parent="." instance=ExtResource("4_2eo2a")]
+position = Vector2(1229, 301)
+
+[node name="tree17" parent="." instance=ExtResource("4_2eo2a")]
+position = Vector2(1077, 272)
+
+[node name="tree18" parent="." instance=ExtResource("4_2eo2a")]
+position = Vector2(992, 174)
+
+[node name="tree19" parent="." instance=ExtResource("4_2eo2a")]
+position = Vector2(1162, 142)
+
+[node name="tree20" parent="." instance=ExtResource("4_2eo2a")]
+position = Vector2(1106, 50)
+
+[node name="tree21" parent="." instance=ExtResource("4_2eo2a")]
+position = Vector2(1226, 61)
+
+[node name="tree22" parent="." instance=ExtResource("4_2eo2a")]
+position = Vector2(958, -21)
+
+[node name="tree7" parent="." instance=ExtResource("4_2eo2a")]
+position = Vector2(200, 153)
+
+[node name="tree8" parent="." instance=ExtResource("4_2eo2a")]
+position = Vector2(57, 102)
+
+[node name="tree9" parent="." instance=ExtResource("4_2eo2a")]
+position = Vector2(283, 61)
+
+[node name="tree23" parent="." instance=ExtResource("4_2eo2a")]
+position = Vector2(130, -10)
+
+[node name="tree24" parent="." instance=ExtResource("4_2eo2a")]
+position = Vector2(412, -21)
+
+[node name="tree25" parent="." instance=ExtResource("4_2eo2a")]
+position = Vector2(538, -42)
+
+[node name="tree26" parent="." instance=ExtResource("4_2eo2a")]
+position = Vector2(654, -61)
+
+[node name="van" parent="." instance=ExtResource("5_5yjvo")]
+position = Vector2(468, 163)
+
+[node name="parede" parent="." instance=ExtResource("6_bsgu8")]
+position = Vector2(29, 30)
+
+[node name="parede2" parent="." instance=ExtResource("6_bsgu8")]
+position = Vector2(535, 691)
+rotation = -1.57067
+
+[node name="parede4" parent="." instance=ExtResource("6_bsgu8")]
+position = Vector2(556, -49)
+rotation = -1.57067
+
+[node name="parede3" parent="." instance=ExtResource("6_bsgu8")]
+position = Vector2(1329, 124)
+
+[node name="limiter" parent="." instance=ExtResource("7_3oayn")]
+position = Vector2(-1, -205)
+
+[node name="limiter2" parent="." instance=ExtResource("7_3oayn")]
+position = Vector2(1280, 721)
