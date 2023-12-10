@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://bdgcif8cu2tdn"]
+
+[ext_resource type="Texture2D" uid="uid://by1hxl4opmuvj" path="res://spr/UI/e.png" id="1_og2ht"]
+[ext_resource type="Texture2D" uid="uid://0e6oefbmmpne" path="res://spr/UI/wasd.png" id="1_xhihv"]
+[ext_resource type="Texture2D" uid="uid://b5dvge45olbrg" path="res://spr/UI/shift.png" id="2_ujdrr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cluw8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_og2ht")
+}],
+"loop": true,
+"name": &"e",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ujdrr")
+}],
+"loop": true,
+"name": &"sprint",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xhihv")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_cluw8")
+animation = &"e"

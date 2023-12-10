@@ -1,7 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://dur5bxlhrspa"]
+[gd_scene load_steps=5 format=3 uid="uid://dur5bxlhrspa"]
 
-[ext_resource type="Script" path="res://script/dialogbox.gd" id="1_e8sik"]
 [ext_resource type="AudioStream" uid="uid://ctmmhuev31eto" path="res://sounds/male_standard_1.ogg" id="2_olw6q"]
+[ext_resource type="Texture2D" uid="uid://c8p66d5lbdhso" path="res://spr/dialogbox/dialogue_box_2.png" id="3_5qw0n"]
+[ext_resource type="Script" path="res://nodes/chatbox.gd" id="4_4fl7k"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_shbuk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_5qw0n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="chatbox" type="Control"]
 layout_mode = 3
@@ -11,42 +23,41 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="dialogbox" type="ColorRect" parent="."]
-layout_mode = 1
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(647, 542)
+sprite_frames = SubResource("SpriteFrames_shbuk")
+script = ExtResource("4_4fl7k")
+
+[node name="name" type="RichTextLabel" parent="AnimatedSprite2D"]
 anchors_preset = -1
-anchor_left = 0.208
-anchor_top = 0.632
-anchor_right = 0.802
-anchor_bottom = 0.921
-offset_left = -0.23999
-offset_top = -0.0400085
-offset_right = 0.439941
-offset_bottom = -0.120056
-grow_horizontal = 2
-grow_vertical = 0
-color = Color(0, 0, 0, 1)
-script = ExtResource("1_e8sik")
-
-[node name="name" type="RichTextLabel" parent="dialogbox"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 49.0
+anchor_left = 0.0977778
+anchor_top = 0.042
+anchor_right = 0.423317
+anchor_bottom = 0.134
+offset_left = -377.92
+offset_top = -152.852
+offset_right = -378.028
+offset_bottom = -153.004
 grow_horizontal = 2
 fit_content = true
+metadata/_edit_use_anchors_ = true
 
-[node name="text" type="RichTextLabel" parent="dialogbox"]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -159.0
+[node name="text" type="RichTextLabel" parent="AnimatedSprite2D"]
+anchors_preset = -1
+anchor_left = 0.045
+anchor_top = 0.186
+anchor_right = 0.955
+anchor_bottom = 0.876
+offset_left = -378.02
+offset_top = -152.916
+offset_right = -377.98
+offset_bottom = -153.056
 grow_horizontal = 2
 grow_vertical = 0
 fit_content = true
+metadata/_edit_use_anchors_ = true
 
-[node name="Timer" type="Timer" parent="dialogbox"]
+[node name="Timer" type="Timer" parent="AnimatedSprite2D"]
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="dialogbox"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="AnimatedSprite2D"]
 stream = ExtResource("2_olw6q")

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dji327uogrurq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4td8v"]
+
+[node name="pegadas" type="StaticBody2D" groups=["pegadas"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4td8v")

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://t0xqdw5dgc4l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kasoy"]
+
+[node name="StaticBody2D" type="StaticBody2D" groups=["broken_tree"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_kasoy")

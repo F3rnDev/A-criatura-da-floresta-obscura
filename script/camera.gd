@@ -22,7 +22,6 @@ func _ready():
 func _process(delta):
 	var posPlayer = get_tree().get_nodes_in_group("player")[0].position
 	var player = getDistance(posPlayer)
-	print(player)
 	
 	canMove = [true, true]
 	
@@ -44,10 +43,8 @@ func _process(delta):
 			if limiter[2] >= 360 and limiter[2] > 0:
 				canMove[1] = false
 			
-		print(limiter)
 	
 	if (player[1] > 370 or player[1] < -370) and canMove[0] == true:
 		position.x += sign(player[1]) * 5
 			
 
-	print(canMove)

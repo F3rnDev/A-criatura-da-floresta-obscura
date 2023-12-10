@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://dooghbjsep0yn"]
+[gd_scene load_steps=13 format=3 uid="uid://dooghbjsep0yn"]
 
+[ext_resource type="Script" path="res://script/main.gd" id="1_iua5y"]
 [ext_resource type="Texture2D" uid="uid://b2on0gbk5hupn" path="res://spr/scenario/cenario_limpo.png" id="1_qomde"]
 [ext_resource type="PackedScene" uid="uid://nvdnh1a0swh6" path="res://nodes/player.tscn" id="1_wxk61"]
 [ext_resource type="PackedScene" uid="uid://dkv04daja0ago" path="res://nodes/tree.tscn" id="4_2eo2a"]
@@ -7,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://bqflqlugtg6pu" path="res://nodes/van.tscn" id="5_5yjvo"]
 [ext_resource type="PackedScene" uid="uid://cyuppxpu8yk0s" path="res://nodes/parede.tscn" id="6_bsgu8"]
 [ext_resource type="PackedScene" uid="uid://d6gyaocyrsob" path="res://nodes/limiter.tscn" id="7_3oayn"]
+[ext_resource type="PackedScene" uid="uid://cc5evahdgh70v" path="res://nodes/lara.tscn" id="8_101gb"]
+[ext_resource type="PackedScene" uid="uid://dji327uogrurq" path="res://nodes/pegadas.tscn" id="9_pntu2"]
+[ext_resource type="PackedScene" uid="uid://t0xqdw5dgc4l" path="res://nodes/broken_tree.tscn" id="10_85cbm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0juag"]
 animations = [{
@@ -20,17 +24,18 @@ animations = [{
 }]
 
 [node name="main" type="Node"]
+script = ExtResource("1_iua5y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(639, 361)
 scale = Vector2(3.00469, 3)
 sprite_frames = SubResource("SpriteFrames_0juag")
 
-[node name="player" parent="." groups=["player"] instance=ExtResource("1_wxk61")]
-position = Vector2(749, 461)
-
 [node name="controle" parent="." groups=["controle"] instance=ExtResource("4_i4hp3")]
 position = Vector2(639, 361)
+
+[node name="player" parent="." groups=["player"] instance=ExtResource("1_wxk61")]
+position = Vector2(567, 670)
 
 [node name="tree" parent="." instance=ExtResource("4_2eo2a")]
 position = Vector2(114, 291)
@@ -132,3 +137,31 @@ position = Vector2(-1, -205)
 
 [node name="limiter2" parent="." instance=ExtResource("7_3oayn")]
 position = Vector2(1280, 721)
+
+[node name="lara" parent="." instance=ExtResource("8_101gb")]
+position = Vector2(810, 554)
+
+[node name="pegadas" parent="." instance=ExtResource("9_pntu2")]
+position = Vector2(687, 180)
+scale = Vector2(3.00469, 3)
+
+[node name="pegadas" parent="pegadas" instance=ExtResource("9_pntu2")]
+position = Vector2(6.32344, -5.33333)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("10_85cbm")]
+position = Vector2(943, 74)
+
+[node name="StaticBody2D" parent="StaticBody2D" instance=ExtResource("10_85cbm")]
+position = Vector2(20, 0)
+
+[node name="StaticBody2D" parent="StaticBody2D/StaticBody2D" instance=ExtResource("10_85cbm")]
+position = Vector2(0, -19)
+
+[node name="StaticBody2D" parent="StaticBody2D/StaticBody2D/StaticBody2D" instance=ExtResource("10_85cbm")]
+position = Vector2(-20, 0)
+
+[node name="StaticBody2D" parent="StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D" instance=ExtResource("10_85cbm")]
+position = Vector2(0, -20)
+
+[node name="StaticBody2D" parent="StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D" instance=ExtResource("10_85cbm")]
+position = Vector2(20, 0)

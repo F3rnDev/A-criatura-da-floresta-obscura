@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="A criatura da floresta obscura"
-run/main_scene="res://nodes/main.tscn"
+run/main_scene="res://nodes/tela_inicial.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*res://script/global.gd"
 
 [display]
 

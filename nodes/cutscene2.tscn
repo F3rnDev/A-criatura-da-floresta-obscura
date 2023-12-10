@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dr3sqvqpuf1t5"]
+
+[ext_resource type="Script" path="res://script/cutscene2.gd" id="1_ftesi"]
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_eotvt"]
+file = "res://videos/Cena_2.ogv"
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = SubResource("VideoStreamTheora_eotvt")
+autoplay = true
+expand = true
+script = ExtResource("1_ftesi")
+
+[connection signal="finished" from="." to="." method="_on_finished"]
