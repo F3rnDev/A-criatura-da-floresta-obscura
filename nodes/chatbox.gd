@@ -70,6 +70,9 @@ func set_dialog_index(number):
 	
 func next_phrase():
 	if phrase_num >= len(dialog):
+		if dialog_index == 0:
+			Global.set_lara_pos(1)
+			
 		if dialog_index == 7:
 			Global.set_end()
 
@@ -91,7 +94,10 @@ func next_phrase():
 	
 	while $text.visible_characters < len($text.text):
 		$text.visible_characters += 1
-		$AudioStreamPlayer2D.play()
+		if dialog[phrase_num]["name"] == "Marcos Valentino":
+			$vozMarcos.play()
+		if dialog[phrase_num]["name"] == "Lara Vicenza":
+			$vozLara.play()
 		$Timer.start()
 		await($Timer.timeout) 
 		

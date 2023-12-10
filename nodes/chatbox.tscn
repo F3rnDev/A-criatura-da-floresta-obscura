@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dur5bxlhrspa"]
+[gd_scene load_steps=7 format=3 uid="uid://dur5bxlhrspa"]
 
 [ext_resource type="AudioStream" uid="uid://ctmmhuev31eto" path="res://sounds/male_standard_1.ogg" id="2_olw6q"]
 [ext_resource type="Texture2D" uid="uid://c8p66d5lbdhso" path="res://spr/dialogbox/dialogue_box_2.png" id="3_5qw0n"]
 [ext_resource type="FontFile" uid="uid://w1xmqptehwxo" path="res://spr/UI/PressStart2P-Regular.ttf" id="3_k1jyg"]
 [ext_resource type="Script" path="res://nodes/chatbox.gd" id="4_4fl7k"]
+[ext_resource type="AudioStream" uid="uid://cd3ugyhoi3o80" path="res://sounds/female_standard_2.ogg" id="5_lkxa0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_shbuk"]
 animations = [{
@@ -66,5 +67,8 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Timer" type="Timer" parent="AnimatedSprite2D"]
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="AnimatedSprite2D"]
+[node name="vozMarcos" type="AudioStreamPlayer2D" parent="AnimatedSprite2D"]
 stream = ExtResource("2_olw6q")
+
+[node name="vozLara" type="AudioStreamPlayer2D" parent="AnimatedSprite2D"]
+stream = ExtResource("5_lkxa0")
