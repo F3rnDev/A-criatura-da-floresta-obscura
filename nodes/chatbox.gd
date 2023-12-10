@@ -28,12 +28,13 @@ var dialog_cluster = [
 		{"name":"Marcos Valentino", "text": "A cabeça desse cara tá toda ferrada. É como se um carro tivesse passado por cima dele"},
 		{"name":"Lara Vicenza", "text": "Homem, mais velho, provavelmente um alcóolatra considerando o cheiro"},
 		{"name":"Marcos Valentino", "text": "Ia comentar isso, o cheiro do álcool é mais forte do que do cadáver. Pelo estado parece que foi recente"},
-		{"name":"Lara Vicenza", "text": "Espera! O trailer meio amassado próximo ao corpo. Ele foi arremessado, e com muita força"},
-		{"name":"Marcos Valentino", "text": "Será que foi um ataque de algum animal silvestre?"},
-		{"name":"Lara Vicenza", "text": "É uma possibilidade, vou continuar procurando"},
+		{"name":"Marcos Valentino", "text": "..."},
+		{"name":"Marcos Valentino", "text": "Espera! O trailer meio amassado próximo ao corpo. Ele foi arremessado, e com muita força"},
+		{"name":"Lara Vicenza", "text": "Será que foi um ataque de algum animal silvestre?"},
+		{"name":"Marcos Valentino", "text": "É uma possibilidade, vou continuar procurando"},
 	],
 	[
-		{"name":"Marcos Valentino", "text": "Mas o que é isso !? o que poderia gerar esse estrago? Isso tá muito estranho"},
+		{"name":"Marcos Valentino", "text": "Mas o que é isso!? o que poderia gerar esse estrago? Isso tá muito estranho"},
 		{"name":"Marcos Valentino", "text": "Ok, várias árvores esmagadas. Levam para dentro da floresta. Seja lá o que isso for, com certeza não é humano"},
 	],
 	[
@@ -42,7 +43,6 @@ var dialog_cluster = [
 		{"name":"Marcos Valentino", "text": "Parece “agressivo”, é como se um gorila desse vários socos no chão"},
 		{"name":"Lara Vicenza", "text": "hahah, pode ter certeza de que gorilas não vivem nessa floresta"},
 		{"name":"Marcos Valentino", "text": "Verdade, um elefante seria mais apropriado. Enfim, esse rastro parece ir a algum lugar, vou segui-lo"},
-		{"name":"Lara Vicenza", "text": "É uma possibilidade, vou continuar procurando"},
 	],
 	[
 		{"name":"Marcos Valentino", "text": "Ok, já tenho uma boa ideia. Vou reportar de volta pra Lara"},
