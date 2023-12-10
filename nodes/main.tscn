@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dooghbjsep0yn"]
+[gd_scene load_steps=14 format=3 uid="uid://dooghbjsep0yn"]
 
 [ext_resource type="Script" path="res://script/main.gd" id="1_iua5y"]
 [ext_resource type="Texture2D" uid="uid://b2on0gbk5hupn" path="res://spr/scenario/cenario_limpo.png" id="1_qomde"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cc5evahdgh70v" path="res://nodes/lara.tscn" id="8_101gb"]
 [ext_resource type="PackedScene" uid="uid://dji327uogrurq" path="res://nodes/pegadas.tscn" id="9_pntu2"]
 [ext_resource type="PackedScene" uid="uid://t0xqdw5dgc4l" path="res://nodes/broken_tree.tscn" id="10_85cbm"]
+[ext_resource type="PackedScene" uid="uid://d27m4r4k1bd7w" path="res://nodes/transition.tscn" id="12_r3iew"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0juag"]
 animations = [{
@@ -165,3 +166,7 @@ position = Vector2(0, -20)
 
 [node name="StaticBody2D" parent="StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D" instance=ExtResource("10_85cbm")]
 position = Vector2(20, 0)
+
+[node name="Transition" parent="." instance=ExtResource("12_r3iew")]
+
+[connection signal="transitioned" from="Transition" to="." method="_on_transition_transitioned"]

@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://d27m4r4k1bd7w"]
+
+[ext_resource type="Script" path="res://script/Transition.gd" id="1_s56d7"]
+
+[sub_resource type="Animation" id="Animation_xqj10"]
+resource_name = "fade to normal"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rx0fo"]
+resource_name = "fade to black"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2ii3v"]
+_data = {
+"fade to black": SubResource("Animation_rx0fo"),
+"fade to normal": SubResource("Animation_xqj10")
+}
+
+[node name="Transition" type="CanvasLayer"]
+script = ExtResource("1_s56d7")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1288.0
+offset_bottom = 731.0
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_2ii3v")
+}
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

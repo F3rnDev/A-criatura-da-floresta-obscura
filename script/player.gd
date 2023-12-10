@@ -48,8 +48,12 @@ func _physics_process(delta):
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	dirX = Input.get_axis("move_left", "move_right")
-	dirY = Input.get_axis("move_down", "move_up")
+	if Global.get_dialog_status():
+		dirX = Input.get_axis("move_left", "move_right")
+		dirY = Input.get_axis("move_down", "move_up")
+	else:
+		dirX = 0
+		dirY = 0
 
 	
 	if velocity.x == 0 and velocity.y == 0:
@@ -117,43 +121,46 @@ func _physics_process(delta):
 	
 	#Dialogos
 	if get_last_slide_collision() != null:
-		if get_last_slide_collision().get_collider().is_in_group("parceira") and Input.is_action_just_pressed("interact"):
+		if get_last_slide_collision().get_collider().is_in_group("parceira") and Input.is_action_just_pressed("interact") and Global.get_dialog_status():
 			Global.set_dialog_status(false)
 			if first_lara_talk == true:
 				Global.set_num(0)
 			if !final_investigation:
 				Global.set_num(7)
 			var chatbox = chatbox_path.instantiate()
+			
+			chatbox.global_position.y = -370
+			
 			owner.add_child(chatbox)
 			first_lara_talk = false
 			intro_dialog = false
 		if van_talk == false:
-			if get_last_slide_collision().get_collider().is_in_group("van") and Input.is_action_just_pressed("interact"):
+			if get_last_slide_collision().get_collider().is_in_group("van") and Input.is_action_just_pressed("interact") and Global.get_dialog_status():
 				Global.set_dialog_status(false)
 				Global.set_num(3)
 				var chatbox = chatbox_path.instantiate()
 				owner.add_child(chatbox)
 				interact_van = true
 				
-			if get_last_slide_collision().get_collider().is_in_group("broken_tree") and Input.is_action_just_pressed("interact"):
+			if get_last_slide_collision().get_collider().is_in_group("broken_tree") and Input.is_action_just_pressed("interact") and Global.get_dialog_status():
 				Global.set_dialog_status(false)
 				Global.set_num(4)
 				var chatbox = chatbox_path.instantiate()
 				owner.add_child(chatbox)
 				interact_arvore = true
 				
-			if get_last_slide_collision().get_collider().is_in_group("pegadas") and Input.is_action_just_pressed("interact"):
+			if get_last_slide_collision().get_collider().is_in_group("pegadas") and Input.is_action_just_pressed("interact") and Global.get_dialog_status():
 				Global.set_dialog_status(false)
 				Global.set_num(5)
 				var chatbox = chatbox_path.instantiate()
 				owner.add_child(chatbox)
 				interact_pegadas = true
 				
-	if position.y < 520 and intro_dialog:
+	if position.y < 520 and intro_dialog and Global.get_dialog_status() and dirY > 0:
 			Global.set_dialog_status(false)
-			intro_dialog = false
 			Global.set_num(1)
 			var chatbox = chatbox_path.instantiate()
+			chatbox.global_position.y = -370
 			owner.add_child(chatbox)
 			
 	if position.y < 400 and van_talk:
@@ -188,7 +195,7 @@ func _physics_process(delta):
 	if start == 450:
 		remove_child(wasd)
 		
-	print(Global.get_dialog_status())
+	
 	
 	move_and_slide()
 	$AnimatedSprite2D.play()

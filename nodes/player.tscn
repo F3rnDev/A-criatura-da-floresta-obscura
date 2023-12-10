@@ -552,7 +552,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_back",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -587,7 +587,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_front",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -622,7 +622,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_side",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k7ipu"]
@@ -634,8 +634,8 @@ script = ExtResource("1_cjn3o")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.505208, 0.505208)
 sprite_frames = SubResource("SpriteFrames_d53i2")
-animation = &"walk_back"
-frame_progress = 0.999893
+animation = &"walk_side"
+frame_progress = 0.570261
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.5, 1.5)
