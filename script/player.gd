@@ -125,11 +125,13 @@ func _physics_process(delta):
 			Global.set_dialog_status(false)
 			if first_lara_talk == true:
 				Global.set_num(0)
-			if !final_investigation:
+			elif !final_investigation:
 				Global.set_num(7)
+			else:
+				Global.set_num(8)
 			var chatbox = chatbox_path.instantiate()
 			
-			chatbox.global_position.y = -370
+			chatbox.get_child(0).get_child(0).position.y -= 370
 			
 			owner.add_child(chatbox)
 			first_lara_talk = false
@@ -156,11 +158,11 @@ func _physics_process(delta):
 				owner.add_child(chatbox)
 				interact_pegadas = true
 				
-	if position.y < 520 and intro_dialog and Global.get_dialog_status() and dirY > 0:
+	if position.y < 1900 and intro_dialog and Global.get_dialog_status() and dirY > 0:
 			Global.set_dialog_status(false)
 			Global.set_num(1)
 			var chatbox = chatbox_path.instantiate()
-			chatbox.global_position.y = -370
+			chatbox.get_child(0).get_child(0).position.y -= 370
 			owner.add_child(chatbox)
 			
 	if position.y < 400 and van_talk:

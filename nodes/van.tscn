@@ -1,12 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://bqflqlugtg6pu"]
+[gd_scene load_steps=10 format=3 uid="uid://bqflqlugtg6pu"]
 
-[ext_resource type="Texture2D" uid="uid://bjcuslxdt6uxq" path="res://spr/scenario/van.png" id="1_gyucb"]
+[ext_resource type="Texture2D" uid="uid://c5tjlxq26nrxg" path="res://spr/scenario/van-export.png" id="1_4qxwq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_akp7m"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_gyucb")
+"texture": ExtResource("1_4qxwq")
 }],
 "loop": true,
 "name": &"default",
@@ -31,11 +31,14 @@ size = Vector2(20, 37.6808)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_617e5"]
 size = Vector2(19.432, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_atenv"]
+size = Vector2(103, 34.5)
+
 [node name="van" type="StaticBody2D" groups=["van"]]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -7.62939e-06)
-scale = Vector2(3.15432, 3.15432)
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_akp7m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -76,3 +79,7 @@ shape = SubResource("RectangleShape2D_r8dpn")
 position = Vector2(-63, 22)
 rotation = -0.752024
 shape = SubResource("RectangleShape2D_sks0l")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="."]
+position = Vector2(71.5, 62.25)
+shape = SubResource("RectangleShape2D_atenv")

@@ -56,6 +56,9 @@ var dialog_cluster = [
 		{"name":"Lara Vicenza", "text": "É uma possibilidade. Bem, se for um animal, ele ainda deve estar dentro da floresta. Podíamos contatar o controle de animais e voltar aqui quando ele tiver sido contido"},
 		{"name":"Marcos Valentino", "text": "Aí nós chegamos em um problema. O guarda florestal"},
 		{"name":"Lara Vicenza", "text": "O que tem ele?"},
+	],
+	[
+		{"name":"Lara Vicenza", "text": "Toma cuidado Marcos"},
 	]
 ]
 
@@ -93,7 +96,7 @@ func next_phrase():
 	$text.visible_characters = 0
 	
 	while $text.visible_characters < len($text.text):
-		$text.visible_characters += 1
+		$text.visible_characters += 2
 		if dialog[phrase_num]["name"] == "Marcos Valentino":
 			$vozMarcos.play()
 		if dialog[phrase_num]["name"] == "Lara Vicenza":

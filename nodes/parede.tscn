@@ -3,7 +3,7 @@
 [sub_resource type="SpriteFrames" id="SpriteFrames_ptyk8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xr53h"]
-size = Vector2(20, 1609)
+size = Vector2(20, 2873)
 
 [node name="parede" type="StaticBody2D"]
 position = Vector2(40, 11)
@@ -13,5 +13,5 @@ metadata/_edit_group_ = true
 sprite_frames = SubResource("SpriteFrames_ptyk8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-40, 130.5)
+position = Vector2(-40, 638.5)
 shape = SubResource("RectangleShape2D_xr53h")

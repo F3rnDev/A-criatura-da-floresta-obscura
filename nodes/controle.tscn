@@ -6,3 +6,6 @@
 script = ExtResource("1_0sd70")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 0
+limit_top = -120
+limit_bottom = 2700

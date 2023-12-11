@@ -1,13 +1,43 @@
-[gd_scene load_steps=4 format=3 uid="uid://cxgim8nsqxiyh"]
+[gd_scene load_steps=13 format=3 uid="uid://cxgim8nsqxiyh"]
 
 [ext_resource type="Script" path="res://script/telaInicial.gd" id="1_l2kx5"]
-[ext_resource type="Texture2D" uid="uid://brhg2vj83tkdc" path="res://spr/UI/telefone.jpeg" id="2_wyufp"]
+[ext_resource type="Texture2D" uid="uid://s5dkin57xgg0" path="res://spr/UI/telefone_pixels1.png" id="2_4ctpt"]
+[ext_resource type="Texture2D" uid="uid://dkc1pvern7jeu" path="res://spr/UI/telefone_pixels2.png" id="3_ihhlh"]
+[ext_resource type="Texture2D" uid="uid://dn1b32svps4nh" path="res://spr/UI/telefone_pixels3.png" id="4_slvlh"]
+[ext_resource type="Texture2D" uid="uid://sp3y3quir157" path="res://spr/UI/telefone_pixels4.png" id="5_6y51g"]
+[ext_resource type="Texture2D" uid="uid://oeynphi1eli" path="res://spr/UI/telefone_pixels5.png" id="6_7hyw4"]
+[ext_resource type="Texture2D" uid="uid://crbrhquicijsm" path="res://spr/UI/telefone_pixels6.png" id="7_whlp5"]
+[ext_resource type="Texture2D" uid="uid://bamt3yuoq7rnd" path="res://spr/UI/telefone_pixels7.png" id="8_u0pxx"]
+[ext_resource type="Texture2D" uid="uid://darw2dwuqjflp" path="res://spr/UI/telefone_pixels8.png" id="9_yvoey"]
+[ext_resource type="FontFile" uid="uid://w1xmqptehwxo" path="res://spr/UI/PressStart2P-Regular.ttf" id="10_sul7g"]
+[ext_resource type="PackedScene" uid="uid://d27m4r4k1bd7w" path="res://nodes/transition.tscn" id="11_tw2w8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_q63ai"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_wyufp")
+"texture": ExtResource("2_4ctpt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ihhlh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_slvlh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_6y51g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_7hyw4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_whlp5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_u0pxx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_yvoey")
 }],
 "loop": true,
 "name": &"default",
@@ -24,28 +54,26 @@ grow_vertical = 2
 script = ExtResource("1_l2kx5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(641, 360.5)
-scale = Vector2(0.79875, 0.798889)
+position = Vector2(640, 360)
+scale = Vector2(0.834, 0.834)
 sprite_frames = SubResource("SpriteFrames_q63ai")
+frame_progress = 0.105571
+speed_scale = 0.7
 
-[node name="start" type="Button" parent="."]
-layout_mode = 0
-offset_left = 477.0
-offset_top = 103.0
-offset_right = 790.0
-offset_bottom = 195.0
-text = "Começar
-"
-flat = true
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 28.0
+offset_bottom = 47.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("10_sul7g")
+theme_override_font_sizes/font_size = 21
+text = "- Pressione qualquer botão para começar -"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="quit" type="Button" parent="."]
-layout_mode = 0
-offset_left = 554.0
-offset_top = 216.0
-offset_right = 714.0
-offset_bottom = 283.0
-text = "Fechar Jogo"
-flat = true
+[node name="Transition" parent="." instance=ExtResource("11_tw2w8")]
 
-[connection signal="pressed" from="start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="transitioned" from="Transition" to="." method="_on_transition_transitioned"]

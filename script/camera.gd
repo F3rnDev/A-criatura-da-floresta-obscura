@@ -23,6 +23,8 @@ func _process(delta):
 	var posPlayer = get_tree().get_nodes_in_group("player")[0].position
 	var player = getDistance(posPlayer)
 	
+	$Camera2D.position.y = posPlayer.y - 500
+	
 	canMove = [true, true]
 	
 	for i in get_tree().get_nodes_in_group("limiters"):

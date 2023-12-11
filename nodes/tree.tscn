@@ -1,12 +1,12 @@
 [gd_scene load_steps=4 format=3 uid="uid://dkv04daja0ago"]
 
-[ext_resource type="Texture2D" uid="uid://ds3s3e0xg8xir" path="res://spr/scenario/tree.png" id="1_hgh3n"]
+[ext_resource type="Texture2D" uid="uid://c7p0qoivvdu5g" path="res://spr/scenario/tree-export.png" id="1_d5tek"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gxq7c"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_hgh3n")
+"texture": ExtResource("1_d5tek")
 }],
 "loop": true,
 "name": &"default",
@@ -20,7 +20,7 @@ size = Vector2(17, 53)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-0.999998, 4.80242)
-scale = Vector2(2.75806, 2.90142)
+scale = Vector2(0.5, 0.526)
 sprite_frames = SubResource("SpriteFrames_gxq7c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

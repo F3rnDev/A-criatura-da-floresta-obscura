@@ -11,6 +11,6 @@ func _process(delta):
 	if Global.get_end() == true:
 		$Transition.transitionToBlack()
 
-func _on_transition_transitioned():
-	if Global.get_end() == true:
+func _on_transition_transitioned(endScene):
+	if endScene:
 		get_tree().change_scene_to_file("res://nodes/cutscene2.tscn")

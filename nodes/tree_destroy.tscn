@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddnhov272gpc2"]
+
+[ext_resource type="Texture2D" uid="uid://ccs0bxt0q0h6n" path="res://spr/scenario/tree-destroy.png" id="1_cb4qm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5lkxu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_cb4qm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gjlnd"]
+size = Vector2(30.5, 178)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-0.999998, 4.80242)
+scale = Vector2(0.5, 0.526)
+sprite_frames = SubResource("SpriteFrames_5lkxu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 1)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_gjlnd")
