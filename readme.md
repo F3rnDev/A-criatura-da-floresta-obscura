@@ -18,7 +18,11 @@ Horror nas Colinas Negras is a 2D animation project, developed in Godot Engine, 
 
 ## Credits
 - **Project Documentation**: Murilo Estacio
+
 - **Cutscenes**: Fernando Humberto Gazola Marques
+
 - **Gameplay Art**: [Theo Fernandes dos Santos Dias](https://github.com/F3rnDev)
+
 - **Audio**: Hugo Mafra Gomes, [Theo Fernandes dos Santos Dias](https://github.com/F3rnDev)
+
 - **Programming**: [Otávio Luiz de Souza](https://github.com/Otaviopax), [Theo Fernandes dos Santos Dias](https://github.com/F3rnDev)
