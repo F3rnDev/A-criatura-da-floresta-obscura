@@ -1,7 +1,5 @@
 extends VideoStreamPlayer
 
-
-
 func _on_finished():
 	Global.end = false
 	Global.lara_pos = 0
